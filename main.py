@@ -1,8 +1,10 @@
 import sys
 import math
 import matplotlib.pyplot as plt
+import random 
 
-RATE_OF_FIRE = 6  # Shots per second
+
+RATE_OF_FIRE = 40  # Shots per second
 AREA_OF_BULLET = 1/40  # Relative to drawing window
 BULLET_MAX_ABS = {"x": math.inf, "y": math.inf}  # determines bullet size. Used for redrawing sight
 RANDOM_FACTOR = 0.25  # Determines how much a weapons should deviates
@@ -50,7 +52,7 @@ def dibuja_balas(lista_de_coordenadas, color='b'):
         return abs(coordenada[0]) <= BULLET_MAX_ABS["x"] or \
                 abs(coordenada[1]) <= BULLET_MAX_ABS["y"]
 
-    PAUSE_TIME = 1 / RATE_OF_FIRE
+    PAUSE_TIME = 0.25 / RATE_OF_FIRE
 
     set_plot(lista_de_coordenadas)
     dibuja_punto_de_mira()
